@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+    font-family: 'Press Start 2P', cursive;
+    margin: 0px;
+    padding: 0px;
+}
+button {
+    font-size: 20px ;
+    width: 100px;
+    height: 50px;
+}
+#barra {
+    margin-top: 10px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid black;
+    background: rgb(250, 250, 250);
+    height: 335px;
+    width: 52px;
+    border-radius: 10px;
+}
+#fundo {
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-top: 10px;
+    background: black;
+    border: 1px solid black;
+    height: 250px;
+    width: 38px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.vida{
+    background-image: linear-gradient(to right,
+        rgb(255, 200, 0) 0, rgb(255, 200, 0) 33%,
+        rgb(250, 250, 250) 33%, rgb(250, 250, 250) 66%,
+        rgb(255, 200, 0) 66%, rgb(255, 200, 0) 99%);
+    border: 1px solid black;
+    border-radius: 1px;
+    height: 4.825px;
+    width: 34px;
+    margin-top: 1px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+#life {
+    top: 5px;
+    margin-left: 30px;
+    height: 350px;
+    position: absolute;
+    z-index: -1;
+}
+#logo {
+    margin-left: 5px;
+    margin-top: 15px;
+    font-size: 45px;
+    color: #0C2031;
+    -webkit-text-fill-color: #1A86E4;
+    -webkit-text-stroke: 1px;
+}
