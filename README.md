@@ -1,5 +1,10 @@
 # Mega Man X Lifebar Custom Widget for Stream Elements 
 
+## Versões
+- **1.0** - Integração Básica entre HTML / CSS / Javascript (tudo criado por mim, exceto o objeto usado na comunicação da API do StreamElements)
+- **2.0** - Integração de FIELDS em JSON para usabilidade sem necessidade de alterar o código, com entradas simpels para qualquer usuário, podendo customizar como quiser (cores, iamgens, sons, volumes, temporização).
+- **TBA** - Refatoração para Obejtos, visando simplificação e redução de redundância.
+
 ## Resumo
 - Toda vez que houver uma doação específica de bits (Cheer) no canal, a barra "cura" ou recebe "dano", enviando uma mensagem no chat contendo o Nome, a Ação e o HP Atual. Caso a vida chegue a zero, ativa uma animação de explosão na webcam.
 
