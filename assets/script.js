@@ -1,134 +1,173 @@
-const dano2 = new Audio('https://www.myinstants.com/media/sounds/mega-man-x-small-damage.mp3');
-const dano4 = new Audio('https://www.myinstants.com/media/sounds/mega-man-x-big-damage.mp3');
-const cura2 = new Audio('https://www.myinstants.com/media/sounds/mega-man-x-small-heal.mp3');
-const cura4 = new Audio('https://www.myinstants.com/media/sounds/mega-man-x-sub-tank-refill.mp3');
-const morte = new Audio('https://www.myinstants.com/media/sounds/megaman-x-death-sound-effect.mp3');
+const dmgS = new Audio('{{soundDmgS}}');
+const dmgB = new Audio('{{soundDmgB}}');
+const healS = new Audio('{{soundHealS}}');
+const healB = new Audio('{{soundHealB}}');
+const death = new Audio('{{soundDeath}}');
 
-dano2.volume = 0.5;
-dano4.volume = 0.5;
-cura2.volume = 0.5;
-cura4.volume = 0.5;
-morte.volume = 0.5;
+dmgS.volume = {soundsVolume} * .01;
+dmgB.volume = {soundsVolume} * .01;
+healS.volume = {soundsVolume} * .01;
+healB.volume = {soundsVolume} * .01;
+death.volume = {soundsVolume} * .01;
 
-let currentHP = 16;
+const jebaitedAPI = '{jebaitedAPIToken}';
 
-const jebaitedToken = 'YOUR_JEBAITED_TOKEN_HERE'
+const background = document.querySelector('#background');
+let letter = '{logoLetter}';
+let currentHP = '{hpCount}';
 
-function c4() {
-    cura4.play();
-}
 
-function curar() {
-    const novaVida = document.createElement("div");
-    document.querySelector('#fundo').appendChild(novaVida).classList = "vida";
-    document.querySelector('#fundo').appendChild(novaVida.cloneNode(true)).classList = "vida";
-}
+if (letter != "") {
+	img.style.display = "none";	
+};
 
-function danoRecebido() {
-    if (fundo.hasChildNodes()) {
+if (currentHP <= 32) {
+	(function hpCount() {
+   		currentHP = '{hpCount}';
+  		for (i = 0; i < currentHP; i++) {
+      	const newLife = document.createElement("div"); 
+      	document.querySelector('#background').appendChild(newLife).classList = "life";
     }
-}
-function reviver() {
-	for (t = 0; t <= 7; t++) {
-      cura2.play();	
-      curar();
-      cura4.play();
-    }
-  	currentHP = 16;
-}
-         
-function morreu() {
-    if (fundo.childElementCount < 1) {
+})()};
 
-        morte.playbackRate = 0.9;
-        morte.play()
-      	setTimeout(reviver, 9250);
+function dmgReceived() {
+    if (background.hasChildNodes()) {
     }
-}
-function msgMorreu() {
-	userName = event.name;
-	message = 'MAVERICK DESTRUIDO!'
-    encodedMessage = encodeURIComponent(message)
-    fetch(`https://api.jebaited.net/botMsg/${jebaitedToken}/${encodedMessage}`)  
-}
+};
+
+function dead() {
+	death.playbackRate = 0.8;
+    death.play()
+    setTimeout(revive, '{reviveTime}');
+    setTimeout(reviveMsg, 9000);
+};
+
+function revive() {
+  	if (currentHP <= 0) {
+	for (i = 0; i < '{hpCount}'; i++) {
+      	const newLife = document.createElement("div"); 
+      	document.querySelector('#background').appendChild(newLife).classList = "life";
+      healS.play();	
+      healB.play();
+    }
+ 	currentHP = '{hpCount}';
+    }
+};
+
+function reviveMsg() {
+	rawMessage = '{msgRevive}';
+    message = rawMessage.replace('hp', '{hpCount}')
+                		.replace("{", "").replace("}", "");
+    encodedMessage = encodeURIComponent(message);
+    fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
+};
+
+
 
 window.addEventListener('onEventReceived', function (obj) {
     if (!obj.detail.event) {
       return;
     }
     if (typeof obj.detail.event.itemId !== "undefined") {
-      obj.detail.listener = "cheer-latest"
+      obj.detail.listener = "cheer-latest";
     }
       const listener = obj.detail.listener.split("-")[0];
       const event = obj.detail.event;
 
 if (listener === "cheer") {
     switch (event.amount) {
-        case 1:
-            if (fundo.childElementCount <= 30) {
-              cura2.play();
-              curar();
-              for (a = 0; a <= 1; a++){
+        case {bitHealS}:
+            if (background.childElementCount <= 30) {
+              for (a = 0; a < '{hpHealS}'; a++){
+                healS.play();
+                const newLife = document.createElement("div"); 
+      			document.querySelector('#background').appendChild(newLife).classList = "life";
                 currentHP++;
               }
               userName = event.name;
-              message = `${userName} curou 2 de vida - HP Atual: ${currentHP}`;
-              encodedMessage = encodeURIComponent(message)
-              fetch(`https://api.jebaited.net/botMsg/${jebaitedToken}/${encodedMessage}`)
+              rawMessage = '{msgHealS}';
+              message = rawMessage.replace(/{user}/g, event.name)
+                				  .replace('hp', currentHP)
+                				  .replace("{", "").replace("}", "")
+                				  .replace('heal', '{hpHealS}')
+                				  .replace("{", "").replace("}", "");
+              encodedMessage = encodeURIComponent(message);
+              fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
             }
         break
-        case 2:
-            if (fundo.childElementCount <= 30) {
-              c4();
-              curar();
-              for (b = 0; b <= 3; b++){
+        case {bitHealB}:
+            if (background.childElementCount <= 30) {
+       			for (b = 0; b < '{hpHealB}'; b++){
+                healB.play();
+                const newLife = document.createElement("div"); 
+      			document.querySelector('#background').appendChild(newLife).classList = "life";
                 currentHP++;
               }
-              for (i = 0; i < 1; i++) {
-                setTimeout(curar, 175);
-                setTimeout(c4, 175);
-              }userName = event.name;
-              message = `${userName} curou 4 de vida - HP Atual: ${currentHP}`
-              encodedMessage = encodeURIComponent(message)
-              fetch(`https://api.jebaited.net/botMsg/${jebaitedToken}/${encodedMessage}`)
-            }
+              userName = event.name;
+              rawMessage = '{msgHealB}';
+              message = rawMessage.replace(/{user}/g, event.name)
+                				  .replace('hp', currentHP)
+                				  .replace("{", "").replace("}", "")
+                				  .replace('heal', '{hpHealB}')
+                				  .replace("{", "").replace("}", "");
+              encodedMessage = encodeURIComponent(message);
+              fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
+              }
         break
-        case 3:
-            danoRecebido();
-            dano2.play();
-        	for (c = 0; c <= 1; c++){
+        case {bitDmgS}:
+            dmgReceived();
+        	for (c = 0; c < '{hpDmgS}'; c++){
+              	dmgS.play();
+              	if(background.childElementCount > 0){
+                   background.removeChild(background.children[0]);
+                };
                 currentHP--;
-            }
-            for (j = 0; j <= 1; j++) {
-                fundo.removeChild(fundo.children[0])
-            } 
-        	if (currentHP >=2) {
+            }; 
+        	if (currentHP >= 1) {
         	userName = event.name;
-            message = `${userName} inflingiu 2 de dano - HP Atual: ${currentHP}`
-            encodedMessage = encodeURIComponent(message)
-            fetch(`https://api.jebaited.net/botMsg/${jebaitedToken}/${encodedMessage}`)
-            } else {
-              setTimeout(morreu, 1000);
-              msgMorreu();
+            rawMessage = '{msgDmgS}';
+			message = rawMessage.replace(/{user}/g, event.name)
+                				.replace('hp', currentHP)
+                				.replace("{", "").replace("}", "")
+                				.replace('dmg', '{hpDmgS}')
+                				.replace("{", "").replace("}", "");
+            encodedMessage = encodeURIComponent(message);
+            fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
+            } if (currentHP < 1) {
+              setTimeout(dead, '{deathSoundTime}');
+              userName = event.name;
+              rawMessage = '{msgDeath}';
+   			  message = rawMessage.replace(/{user}/g, userName)
+    		  encodedMessage = encodeURIComponent(message);
+    		  fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
             };
-        break
-        case 4:
-            danoRecebido();
-            dano4.play();
-       		for (c = 0; c <= 3; c++){
-                currentHP--;
-            }
-            for (k = 0; k <= 3; k++) {
-                fundo.removeChild(fundo.children[0])
-            }
-        	if (currentHP >=2) {
+		break
+        case {bitDmgB}:
+            dmgReceived();
+            for (d = 0; d < '{hpDmgB}'; d++){
+              	dmgB.play();
+             	currentHP--;
+              	if(background.childElementCount > 0){
+                   background.removeChild(background.children[0]);
+                };
+			} if (currentHP >= 1) {
         	userName = event.name;
-            message = `${userName} inflingiu 4 de dano - HP Atual: ${currentHP}`
-            encodedMessage = encodeURIComponent(message)
-            fetch(`https://api.jebaited.net/botMsg/${jebaitedToken}/${encodedMessage}`)
-            } else {
-              setTimeout(morreu, 1000);
-              msgMorreu();
+            rawMessage = '{msgDmgB}';
+            message = rawMessage.replace(/{user}/g, event.name)
+                				.replace('hp', currentHP)
+                				.replace("{", "").replace("}", "")
+                				.replace('dmg', '{hpDmgB}')
+                				.replace("{", "").replace("}", "");
+            encodedMessage = encodeURIComponent(message);
+            fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
+            } if (currentHP < 1) {
+              setTimeout(dead, '{deathSoundTime}');
+              userName = event.name;
+              rawMessage = '{msgDeath}';
+   			  message = rawMessage.replace(/{user}/g, userName)
+    		  encodedMessage = encodeURIComponent(message);
+    		  fetch(`https://api.jebaited.net/botMsg/${jebaitedAPI}/${encodedMessage}`);
             };
+		break
     }
 }});
