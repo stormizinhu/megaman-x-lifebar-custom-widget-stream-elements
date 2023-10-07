@@ -4,63 +4,55 @@
     margin: 0px;
     padding: 0px;
 }
-button {
-    font-size: 20px ;
-    width: 100px;
-    height: 50px;
-}
-#barra {
+#lifeBar {
     margin-top: 10px;
     margin-left: 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid black;
-    background: rgb(250, 250, 250);
     height: 335px;
     width: 52px;
     border-radius: 10px;
+    border: 3px solid {{lifeBarOutline}};
+    background: {{lifeBar}};
 }
-#fundo {
+#background {
+	margin-top: 10px;  
+  	padding-top: 1px;  
     padding-bottom: 1px;
-    padding-top: 1px;
-    margin-top: 10px;
-    background: black;
-    border: 1px solid black;
     height: 250px;
     width: 38px;
-    border-radius: 5px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    border-radius: 5px;
+    border: 1px solid {{lifeBarBackgroundOutline}};
+ 	background: {{lifeBarBackground}};
 }
-.vida{
-    background-image: linear-gradient(to right,
-        rgb(255, 200, 0) 0, rgb(255, 200, 0) 33%,
-        rgb(250, 250, 250) 33%, rgb(250, 250, 250) 66%,
-        rgb(255, 200, 0) 66%, rgb(255, 200, 0) 99%);
-    border: 1px solid black;
-    border-radius: 1px;
+.life{
+    margin-top: 1px;
     height: 4.825px;
     width: 34px;
-    margin-top: 1px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     justify-content: space-between;
-}
-#life {
-    top: 5px;
-    margin-left: 30px;
-    height: 350px;
-    position: absolute;
-    z-index: -1;
+    border-radius: 1px;
+    border: 1px solid black;
+  	background-image: linear-gradient(to right, 
+      {{hpColor1}} 0, {{hpColor1}} 33%, 
+      {{hpColor2}} 33%, {{hpColor2}} 66%, 
+      {{hpColor3}} 66%, {{hpColor3}} 99%);
 }
 #logo {
+	font-size: 45px;
+    margin-top: 15px;  
     margin-left: 5px;
-    margin-top: 15px;
-    font-size: 45px;
-    color: #0C2031;
-    -webkit-text-fill-color: #1A86E4;
+    color: {{outlineColor}};
+    -webkit-text-fill-color: {{logoColor}};
     -webkit-text-stroke: 1px;
+}
+#img {
+	width: 47px;
+  	height: 47px;
 }
