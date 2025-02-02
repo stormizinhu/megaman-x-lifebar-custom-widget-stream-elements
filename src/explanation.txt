@@ -1,0 +1,11 @@
+Hi. I'm Stormizinhu and being a huge fan of Mega Man, I created this widget
+to respond on especific bit donations, to Heal or Damage, causing Death.
+
+1. You need to create a Token on "https://jebaited.net/tokens/". On "API Tokens", create a token with "botMsg".
+2. Copy this token and paste on "Jebaited Token" section on this widget.
+3. DON'T SHARE THE TOKEN WITH ANYONE. 
+4. Adjust the HP Values, Logo, Colors, Messages and Sounds as you like!
+5. I added the Chat to see if the messages is working.
+6. Delete this Layer after.
+7. Delete the Chat Layer.
+8. Enjoy =)

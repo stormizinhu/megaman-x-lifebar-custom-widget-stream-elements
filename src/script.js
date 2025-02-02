@@ -2,6 +2,7 @@ const jebaitedAPI = '{jebaitedAPIToken}';
 const background = document.querySelector('#background');
 const letter = '{logoLetter}';
 let currentHP = '{hpCount}';
+const soundsVolume = '{soundsVolume}';
 
 const sounds = {
   dmgS: new Audio('{{soundDmgS}}'),
@@ -17,6 +18,10 @@ function setSoundVolume(volume) {
     sound.volume = volume * 0.01;
   }
 }
+
+setSoundVolume(soundsVolume);
+
+console.log(sounds.dmgS.volume);
 
 const messages = {
   healS: ('{{msgHealS}}'),
