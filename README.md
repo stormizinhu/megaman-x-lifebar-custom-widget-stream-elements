@@ -11,7 +11,7 @@ Video demonstativo - https://www.linkedin.com/feed/update/urn:li:activity:716317
 
 - `HTML`
 - `CSS`
-- `JavaScritp`
+- `JavaScript`
 - `JSON`
 - `Twitch + Stream Elements APIs`
 - `Streamer.bot`
