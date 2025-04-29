@@ -21,7 +21,7 @@
 
 ---
 
-## Introduction  
+## [Introduction](#contents)  
 This widget brings Mega Man X nostalgia to your stream!  
 Whenever a viewer sends a specific Bit amount (Cheer), the HP bar reacts by healing or taking damage. A message appears in chat showing the user, the action, and the current HP. If HP reaches zero, a webcam explosion effect is triggered in OBS via Streamer.bot.
 
