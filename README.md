@@ -81,9 +81,11 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 ``Code``
 
 ![HTML](https://img.shields.io/badge/HTML-5-orange?logo=html5) ![CSS](https://img.shields.io/badge/CSS-3-blue?logo=css3) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript) ![JSON](https://img.shields.io/badge/JSON-grey?logo=json)
+
 ``Platforms``
 
 ![StreamElements](https://img.shields.io/badge/StreamElements-darkgreen?logo=streamelements) ![Twitch](https://img.shields.io/badge/Twitch-purple?logo=twitch)
+
 ``Softwares``
 
 ![OBS](https://img.shields.io/badge/OBS-black?logo=obsstudio) ![StreamerBot](https://img.shields.io/badge/StreamerBot-cyan?logo=streamerbot)
