@@ -1,24 +1,112 @@
-{ 
+{
   "widgetName": {
     "group": "Creator",
     "type": "hidden",
     "label": "Mega Man X Lifebar",
     "value": ""
-  },	
+  },
   "widgetAuthor": {
     "group": "Creator",
     "type": "hidden",
     "label": "http://www.twitch.tv/Stormizinhu",
     "value": ""
   },
-  
   "jebaitedAPIToken": {
     "group": "Jebaited Token",
     "type": "Text",
-    "label": "https://jebaited.net/tokens/",  
+    "label": "https://jebaited.net/tokens/",
     "value": ""
-  }, 
-   "hpValues": {
+  },
+  "lifebarOrientation": {
+    "group": "Lifebar Settings",
+    "type": "dropdown",
+    "label": "Choose an option:",
+    "value": "Vertical",
+    "options": {
+      "vertical": "Vertical",
+      "horizontal": "Horizontal"
+    }
+  },
+  "lifeBarBorder": {
+    "group": "Lifebar Settings",
+    "type": "slider",
+    "label": "Lifebar Border thickness (Default = 0)",
+    "value": 1,
+    "min": 0,
+    "max": 10,
+    "step": 1
+  },
+  "lifeBar": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "Lifebar Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "lifeBarOutline": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "Lifebar Outline Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "lifeBarBackground": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "Lifebar Background Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "lifeBarBackgroundOutline": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "Lifebar Background Outline Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "hpColor1": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "HP Color 1",
+    "value": "rgb(255, 255, 255)"
+  },
+  "hpColor2": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "HP Color 2",
+    "value": "rgb(255, 255, 255)"
+  },
+  "hpColor3": {
+    "group": "Lifebar Settings",
+    "type": "colorpicker",
+    "label": "HP Color 3",
+    "value": "rgb(255, 255, 255)"
+  },
+  "logoValues": {
+    "group": "Logo/Letter Settings",
+    "label": "Use a Letter/Symbol OR Image",
+    "type": "hidden"
+  },
+  "logoLetter": {
+    "group": "Logo/Letter Settings",
+    "type": "Text",
+    "label": "Logo Letter or Symbol (Only one)",
+    "value": "S"
+  },
+  "logoColor": {
+    "group": "Logo/Letter Settings",
+    "type": "colorpicker",
+    "label": "Letter Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "outlineColor": {
+    "group": "Logo/Letter Settings",
+    "type": "colorpicker",
+    "label": "Outline Color",
+    "value": "rgb(255, 255, 255)"
+  },
+  "logoImg": {
+    "group": "Logo/Letter Settings",
+    "type": "image-input",
+    "label": "Image Logo (Square, will be resised)"
+  },
+  "hpValues": {
     "group": "HP Settings",
     "label": "HP Values for Initial, Heal and Damage",
     "type": "hidden"
@@ -53,133 +141,64 @@
     "label": "Big Damage (Default = 4)",
     "value": 4
   },
-  
   "bitValues": {
-    "group": "HP Settings",
+    "group": "Bits Settings",
     "label": "Bit Values for Small Big Heal/Damage",
     "type": "hidden"
   },
   "bitHealS": {
-    "group": "HP Settings",
+    "group": "Bits Settings",
     "type": "number",
     "label": "Bits to trigger Small Heal",
     "value": 1
   },
   "bitHealB": {
-    "group": "HP Settings",
+    "group": "Bits Settings",
     "type": "number",
     "label": "Bits to trigger Big Heal",
     "value": 2
   },
   "bitDmgS": {
-    "group": "HP Settings",
+    "group": "Bits Settings",
     "type": "number",
     "label": "Bits to trigger Small Damage",
     "value": 3
   },
   "bitDmgB": {
-    "group": "HP Settings",
+    "group": "Bits Settings",
     "type": "number",
     "label": "Bits to trigger Big Heal",
     "value": 4
   },
-   "soundValues": {
-    "group": "HP Settings",
-    "label": "Time for Death and Revive",
+  "soundValues": {
+    "group": "Time Settings",
+    "label": "Life add/remove, Death and Revive",
     "type": "hidden"
   },
+  "lifeIncrementTime": {
+    "group": "Time Settings",
+    "type": "number",
+    "label": "Life 'speed'(ms)",
+    "value": 200
+  },
   "deathSoundTime": {
-   "group": "HP Settings",
-   "type": "number",
+    "group": "Time Settings",
+    "type": "number",
     "label": "Death sound (ms)",
     "value": 1000
   },
- "reviveTime": {
-   "group": "HP Settings",
-   "type": "number",
+  "reviveTime": {
+    "group": "Time Settings",
+    "type": "number",
     "label": "Revive Time Delay (ms)",
     "value": 1000
   },
-  
-   "logoValues": {
-    "group": "Logo Settings",
-    "label": "Use a Letter/Symbol OR Image",
-    "type": "hidden"
-  },
-  "logoLetter": {
-    "group": "Logo Settings",
-    "type": "Text",
-    "label": "Logo Letter or Symbol (Only one)",
-    "value": "S"
-  },
-  "logoColor": {
-    "group": "Logo Settings",
-    "type": "colorpicker",
-    "label": "Letter Color",
-    "value": "rgb(255, 255, 255)"
-  },
-  "outlineColor": {
-    "group": "Logo Settings",
-    "type": "colorpicker",
-    "label": "Outline Color",
-    "value": "rgb(255, 255, 255)"
-  },
-
-  "logoImg": {
-  	"group": "Logo Settings",
-    "type": "image-input",
-    "label": "Image Logo (Square, will be resised)"
-  },
-  
-  "lifeBar": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "Lifebar Color",
-    "value": "rgb(255, 255, 255)"
-  },
-  "lifeBarOutline": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "Lifebar Outline Color",
-    "value": "rgb(255, 255, 255)"
-  },
-   "lifeBarBackground": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "Lifebar Background Color",
-    "value": "rgb(255, 255, 255)"
-  },
-   "lifeBarBackgroundOutline": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "Lifebar Background Outline Color",
-    "value": "rgb(255, 255, 255)"
-  },
-  "hpColor1": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "HP Color 1",
-    "value": "rgb(255, 255, 255)"
-  },
-  "hpColor2": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "HP Color 2",
-    "value": "rgb(255, 255, 255)"
-  },
-  "hpColor3": {
-  	"group": "Lifebar Color Settings",
-    "type": "colorpicker",
-    "label": "HP Color 3",
-    "value": "rgb(255, 255, 255)"
-  },
-  
   "msgVariables": {
     "group": "Message Settings",
     "label": "Var: {user} {healS/B} {dmgS/B} {hp}",
     "type": "hidden"
   },
-   "msgHealS": {
+  "msgHealS": {
     "group": "Message Settings",
     "type": "Text",
     "label": "Small Heal Message",
@@ -208,24 +227,23 @@
     "type": "Text",
     "label": "Death Message",
     "value": ""
-   },
+  },
   "msgRevive": {
     "group": "Message Settings",
     "type": "Text",
     "label": "Revive Message",
     "value": ""
-   },
-  
+  },
   "soundHealS": {
     "group": "Sound Settings",
     "type": "sound-input",
     "label": "Small Heal Sound"
-   },
+  },
   "soundHealB": {
     "group": "Sound Settings",
     "type": "sound-input",
     "label": "Big Heal Sound"
-   },
+  },
   "soundDmgS": {
     "group": "Sound Settings",
     "type": "sound-input",
@@ -256,7 +274,6 @@
     "steps": 5,
     "group": "Sound Settings"
   },
-    
   "locale": {
     "group": "Locale",
     "type": "dropdown",

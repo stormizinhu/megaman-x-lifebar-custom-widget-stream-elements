@@ -1,58 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
-    font-family: 'Press Start 2P', cursive;
-    margin: 0px;
-    padding: 0px;
+  font-family: 'Press Start 2P', cursive;
+  margin: 0;
+  padding: 0;
 }
+
 #lifeBar {
-    margin-top: 10px;
-    margin-left: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 335px;
-    width: 52px;
-    border-radius: 15px;
-    border: 3px solid {{lifeBarOutline}};
-    background: {{lifeBar}};
+  margin-top: 30px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 335px;
+  width: 52px;
+  background: {{lifeBar}};
 }
+
 #background {
-	margin-top: 10px;  
-  	padding-top: 1px;  
-    padding-bottom: 1px;
-    height: 250px;
-    width: 38px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    border-radius: 6px;
-    border: 1px solid {{lifeBarBackgroundOutline}};
- 	background: {{lifeBarBackground}};
+  margin-top: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  height: 250px;
+  width: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  /* border-radius: 4px; */
+  /* border: 1px solid black; */
+  background: {{lifeBarBackground}};
 }
-.life{
-    margin-top: 1px;
-    height: 4.825px;
-    width: 34px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 2px;
-    border: 1px solid black;
-  	background-image: linear-gradient(to right, 
-      {{hpColor1}} 0, {{hpColor1}} 33%, 
-      {{hpColor2}} 33%, {{hpColor2}} 66%, 
-      {{hpColor3}} 66%, {{hpColor3}} 99%);
+
+.life {
+  margin-top: 1px;
+  height: 4.825px;
+  width: 30px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 2px;
+  border: 1px solid black;
+  background-image: linear-gradient(to right,
+    {{hpColor1}} 0, {{hpColor1}} 33%,
+    {{hpColor2}} 33%, {{hpColor2}} 66%,
+    {{hpColor3}} 66%, {{hpColor3}} 99%);
 }
+
+#branding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
 #logo {
-	font-size: 45px;
-    margin-top: 15px;  
-    margin-left: 5px;
-    color: {{outlineColor}};
-    -webkit-text-fill-color: {{logoColor}};
-    -webkit-text-stroke: 1px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 45px;
+  color: {{outlineColor}};
+  -webkit-text-fill-color: {{logoColor}};
+  -webkit-text-stroke: 1px;
 }
+
 #img {
-	width: 47px;
-  	height: 47px;
+  width: 47px;
+  height: 47px;
+  margin-bottom: 5px;
+  image-rendering: pixelated;
+}
+
+/* HORIZONTAL MODIFIER */
+#lifeBar.horizontal {
+  flex-direction: row-reverse;
+  height: 35px;
+  width: 350px;
+  padding: 10px;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+#lifeBar.horizontal #background {
+  flex-direction: row;
+  height: 34px;
+  width: 282px;
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0 1px;
+}
+
+#lifeBar.horizontal .life {
+  margin: 0 1px 0 1px;
+  width: 4.825px;
+  height: 34px;
+  flex-direction: column-reverse;
+  background-image: linear-gradient(
+    {{hpColor1}} 0, {{hpColor1}} 33%,
+    {{hpColor2}} 33%, {{hpColor2}} 66%,
+    {{hpColor3}} 66%, {{hpColor3}} 99%);
+}
+
+#lifeBar.horizontal #branding {
+  flex-direction: row;
+  align-items: center;
+  margin: 5px 5px 5px 0;
+  gap: 10px;
+}
+
+#lifeBar.horizontal #logo {
+  font-size: 45px;
+}
+
+#lifeBar.horizontal #img {
+  width: 38px;
+  height: 38px;
+}
+
+/* PIXEL BORDER */
+.pixel-corners {
+  position: relative;
+  box-shadow:
+    4px 0 0 {{lifeBarBorder}}px {{lifeBarOutline}},
+    -4px 0 0 {{lifeBarBorder}}px {{lifeBarOutline}},
+    0 -4px 0 {{lifeBarBorder}}px {{lifeBarOutline}},
+    0 4px 0 {{lifeBarBorder}}px {{lifeBarOutline}};
+}
+
+.pixel-corners::before {
+  content: "";
+  position: absolute;
+  inset: 2px; /* puxa para dentro, reduzindo a área coberta */
+  z-index: 1;
+  pointer-events: none;
+  box-shadow:
+    6px 6px 0 0 {{lifeBarOutline}},
+    -6px 6px 0 0 {{lifeBarOutline}},
+    6px -6px 0 0 {{lifeBarOutline}},
+    -6px -6px 0 0 {{lifeBarOutline}},
 }
