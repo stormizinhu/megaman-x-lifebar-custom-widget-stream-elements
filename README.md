@@ -4,8 +4,9 @@
 
 ---
 
-![Vertical Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/master/img/vertical.gif)  
-![Horizontal Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/master/img/horizontal.png)
+![Vertical Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/main/src/img/vertical.gif) 
+
+![Horizontal Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/main/src/img/horizontal.png)
 
 ---
 
@@ -15,7 +16,7 @@
 - [Installation](#installation)
 - [How to Use](#how-to-use)
 - [Technologies](#technologies)
-- [Versions & Changelog](#versions--changelog)
+- [Versions & Changelog](#versions-&-changelog)
 - [License](#license)
 
 ---
@@ -27,8 +28,8 @@ Whenever a viewer sends a specific Bit amount (Cheer), the HP bar reacts by heal
 Inspired by the original game's visuals, everything is built with pure HTML/CSS/JavaScript. Sound effects from Mega Man X are included for actions like Heal, Damage, Explosion, and Revive.
 
 ---
+## [Features](#contents)
 
-## Features
 - Real-time reactions based on Bit donations (Cheer).
 - Applies Heal or Damage depending on the cheer amount.
 - Sends chat messages with user name, action, and current HP.
@@ -42,10 +43,10 @@ Inspired by the original game's visuals, everything is built with pure HTML/CSS/
 
 ---
 
-## Installation  
+## [Installation](#contents)
 📢 This widget is not yet published to the StreamElements Gallery. You can still fork or clone the repo for personal use:
 
-### Clone via HTTPS
+#### Clone via HTTPS
 ```bash
 git clone https://github.com/stormizinhu/megaman-x-custom-alerts-widget-stream-elements.git
 ```
@@ -56,7 +57,7 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 ```
 ---
 
-## [How to Use](#how-to-use)
+## [How to Use](#contents)
 
 1. Open StreamElements → **My Overlays**.
 2. Create a new Overlay and add a **"Custom Widget"**.
@@ -89,7 +90,7 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 
 ---
 
-## [Versions](#contents)
+## [Versions & Changelog](#contents)
 
 🟢 v1.0 – Initial Release
 - Basic Cheer-to-HP logic (Heal/Damage).
