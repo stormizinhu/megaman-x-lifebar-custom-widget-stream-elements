@@ -58,6 +58,12 @@ function setSoundVolume(volume) {
   }
 }
 
+function playSound(sound) {
+  const newInstance = new Audio(sound.src);
+  newInstance.volume = sound.volume;
+  newInstance.play().catch(console.error);
+}
+
 function formatMessage(msgTemplate, userName, currentHPValue) {
   const finalMessage = msgTemplate
     .replace(/{user}/g, userName)
@@ -93,11 +99,12 @@ function handleLife(bitAmount, statAmount, sound, messageTemplate, userName) {
     if (isHeal) {
       createLife();
       currentHP++;
+      playSound(sound);
     } else {
       removeLife();
       currentHP = Math.max(0, currentHP - 1);
+      sound.play();
     }
-    sound.play();
     completedIterations++;
 
     if (completedIterations === iterations) {
