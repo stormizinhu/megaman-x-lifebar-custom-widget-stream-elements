@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root {
+  --max-hp: {{hpMax}}
+}
+
 * {
   font-family: 'Press Start 2P', cursive;
   margin: 0;
@@ -21,20 +25,18 @@
   margin-top: 10px;
   padding-top: 1px;
   padding-bottom: 1px;
-  height: 250px;
+  height: 250px; /* altura total do container da barra de vida */
   width: 30px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  /* border-radius: 4px; */
-  /* border: 1px solid black; */
   background: {{lifeBarBackground}};
+  position: relative;
 }
 
 .life {
   margin-top: 1px;
-  height: 4.825px;
-  width: 30px;
+  width: 30px; /* largura fixa para cada barra */
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -46,6 +48,7 @@
     {{hpColor2}} 33%, {{hpColor2}} 66%,
     {{hpColor3}} 66%, {{hpColor3}} 99%);
 }
+
 
 #branding {
   display: flex;
@@ -91,7 +94,6 @@
 
 #lifeBar.horizontal .life {
   margin: 0 1px 0 1px;
-  width: 4.825px;
   height: 34px;
   flex-direction: column-reverse;
   background-image: linear-gradient(

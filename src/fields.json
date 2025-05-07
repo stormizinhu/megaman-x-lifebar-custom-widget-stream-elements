@@ -11,10 +11,22 @@
     "label": "http://www.twitch.tv/Stormizinhu",
     "value": ""
   },
-  "jebaitedAPIToken": {
-    "group": "Jebaited Token",
+  "howGetCodes": {
+    "group": "ID/Token Config",
+    "type": "hidden",
+    "label": "https://streamelements.com/dashboard/account/channels",
+    "value": ""
+  },
+  "channelId": {
+    "group": "ID/Token Config",
     "type": "Text",
-    "label": "https://jebaited.net/tokens/",
+    "label": "Stream Elements Channel ID",
+    "value": ""
+  },
+  "seJWTToken": {
+    "group": "ID/Token Config",
+    "type": "Text",
+    "label": "Stream Elements JWT Token (Caution!)",
     "value": ""
   },
   "lifebarOrientation": {
@@ -111,10 +123,16 @@
     "label": "HP Values for Initial, Heal and Damage",
     "type": "hidden"
   },
-  "hpCount": {
+  "hpMax": {
     "group": "HP Settings",
     "type": "number",
-    "label": "Initial HP and Revived HP (0 ~ 32)",
+    "label": "Max HP (0 ~ 32)",
+    "value": 32
+  },
+  "hpInitial": {
+    "group": "HP Settings",
+    "type": "number",
+    "label": "Initial HP and Revive HP",
     "value": 16
   },
   "hpHealS": {

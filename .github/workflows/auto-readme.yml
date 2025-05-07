@@ -1,0 +1,69 @@
+name: Auto Generate README
+
+on:
+  push:
+    paths:
+      - README.template.md
+      - .github/workflows/auto-readme.yml
+  workflow_dispatch:
+
+env:
+  USER: ${{ github.repository_owner }}
+  REPO: ${{ github.event.repository.name }}
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Generate README.md from Template
+        run: |
+          echo "Substituindo variáveis no README.template.md..."
+
+          # Substitui variáveis básicas do template
+          envsubst < README.template.md > temp_readme.md
+
+          # Define badges formatadas
+          BADGES=$(cat <<EOF
+          [![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-blue)](https://beacons.ai/${USER}) \
+          [![Releases](https://img.shields.io/github/v/release/${USER}/${REPO}?label=Releases)](https://github.com/${USER}/${REPO}/releases) \
+          ![Repo Size](https://img.shields.io/github/repo-size/${USER}/${REPO}) \
+          ![status](https://img.shields.io/badge/status-WIP-orange) \
+          ![Last Commit](https://img.shields.io/github/last-commit/${USER}/${REPO}) \
+          [![Issues](https://img.shields.io/github/issues/${USER}/${REPO}?label=Issues)](https://github.com/${USER}/${REPO}/issues) \
+          [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE) \
+          ![Stars](https://img.shields.io/github/stars/${USER}/${REPO}?style=social) \
+          ![Forks](https://img.shields.io/github/forks/${USER}/${REPO}) 
+          EOF
+          )
+
+          # Substitui o marcador de badges no template
+          awk -v badges="$BADGES" '
+            /<!-- BADGES_ARE_INSERTED_HERE -->/ {
+              print badges
+              next
+            }
+            { print }
+          ' temp_readme.md > README.md
+
+      - name: Commit and Push README.md
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          LAST_COMMIT_MSG=$(git log -1 --pretty=%B)
+          LAST_COMMIT_AUTHOR=$(git log -1 --pretty="%an")
+
+          echo "Último commit foi de: $LAST_COMMIT_AUTHOR"
+          echo "Mensagem: $LAST_COMMIT_MSG"
+
+          if [ "$LAST_COMMIT_AUTHOR" != "github-actions[bot]" ]; then
+            git add README.md
+            git commit -m "${LAST_COMMIT_MSG} updated"
+            git push
+          else
+            echo "Último commit foi da action. Nenhum novo commit será feito."
+          fi

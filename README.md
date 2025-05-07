@@ -1,6 +1,4 @@
 # Mega Man X Lifebar – Custom StreamElements Widget  
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-blue)](https://beacons.ai/stormizinhu) [![Releases](https://img.shields.io/github/v/release/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Releases)](https://github.com/stormizinhu/megaman-x-custom-alerts-widget-stream-elements/releases) ![Repository Size](https://img.shields.io/github/repo-size/stormizinhu/megaman-x-custom-alerts-widget-stream-elements) ![Status](https://img.shields.io/badge/status-WIP-orange) [![Issues](https://img.shields.io/github/issues/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Issues)](https://github.com/stormizinhu/megaman-x-custom-alerts-widget-stream-elements/issues)  
-![Last Commit](https://img.shields.io/github/last-commit/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE) ![Stars](https://img.shields.io/github/stars/stormizinhu/megaman-x-custom-alerts-widget-stream-elements?style=social) ![Forks](https://img.shields.io/github/forks/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements)
 
 ---
 
@@ -25,7 +23,7 @@
 This widget brings Mega Man X nostalgia to your stream!  
 Whenever a viewer sends a specific Bit amount (Cheer), the HP bar reacts by healing or taking damage. A message appears in chat showing the user, the action, and the current HP. If HP reaches zero, a webcam explosion effect is triggered in OBS via Streamer.bot.
 
-Inspired by the original game's visuals, everything is built with pure HTML/CSS/JavaScript. Sound effects from Mega Man X are included for actions like Heal, Damage, Explosion, and Revive.
+Inspired by the original game's visuals, everything is built with pure HTML/CSS/JavaScript. Sound effects from Mega Man X are included for actions like Heal, Damage and Revive.
 
 ---
 ## [Features](#contents)
@@ -62,9 +60,10 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 1. Open StreamElements → **My Overlays**.
 2. Create a new Overlay and add a **"Custom Widget"**.
 3. Paste the **HTML/CSS/JS/JSON** files from this project.
-4. Create a **JWT Token** on **Jebaited** and configure the send message option.
-5. Configure your **custom fields** on the widget interface.
-6. Integrate with **OBS** + **Streamer.bot** for extra effects (optional).
+4. Copy your **Channel ID** and **JWT Token** from Stream Elements Channel Settings.
+5. Paste them in the **ID/Token Config** group
+6. Configure your **Custom Fields** on the widget interface.
+7. Integrate with **OBS** + **Streamer.bot** for extra effects (optional).
 
 ---
 
@@ -74,6 +73,8 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 - Automatically resets and "revives" when HP hits zero.
 - Fully customizable: colors, layout (horizontal/vertical), HP values, thresholds, sound files, fonts, messages, and more.
 - Sends live chat messages with user actions and remaining HP.
+- Vertical or Horizontal Diplay.
+- From 0 to 32 hp, it changes it's size to fit the lifebar.
 
 ---
 
@@ -119,6 +120,12 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 - Enhanced health logic (more accurate HP tracking).
 - Optimized for both vertical and horizontal orientation.
 
+🟢 v5.0 – Major Upgrade
+- Now using Channel ID and JWT Token from Stream Elements.
+- Overall better code structure.
+- HP responsive size based on max HP.
+- HP sounds to loop like in the game.
+
 
 ##### 📄[Full Changelog](./CHANGELOG.md)
 
@@ -135,4 +142,4 @@ This project is licensed under the MIT License.
 
 ---
 
-### © Stormizinhu - 2025
+### © ${USER} - 2025
