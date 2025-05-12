@@ -1,6 +1,7 @@
 # Mega Man X Lifebar – Custom StreamElements Widget  
 
 ---
+<!-- BADGES_ARE_INSERTED_HERE -->
 
 ![Vertical Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/main/src/img/vertical.gif) 
 
