@@ -1,11 +1,7 @@
 # Mega Man X Lifebar – Custom StreamElements Widget  
 
 ---
-<<<<<<< HEAD
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-blue)](https://beacons.ai/stormizinhu) [![Releases](https://img.shields.io/github/v/release/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Releases)](https://github.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/releases) ![Repo Size](https://img.shields.io/github/repo-size/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) ![status](https://img.shields.io/badge/status-WIP-orange) ![Last Commit](https://img.shields.io/github/last-commit/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) [![Issues](https://img.shields.io/github/issues/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Issues)](https://github.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/issues) [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE) ![Stars](https://img.shields.io/github/stars/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?style=social) ![Forks](https://img.shields.io/github/forks/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) 
-=======
-[![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4-blue)](https://beacons.ai/stormizinhu) [![Releases](https://img.shields.io/github/v/release/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Releases)](https://github.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/releases) ![Repo Size](https://img.shields.io/github/repo-size/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) ![status](https://img.shields.io/badge/status-WIP-orange) ![Last Commit](https://img.shields.io/github/last-commit/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) [![Issues](https://img.shields.io/github/issues/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?label=Issues)](https://github.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/issues) [![MIT License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE) ![Stars](https://img.shields.io/github/stars/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements?style=social) ![Forks](https://img.shields.io/github/forks/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements) 
->>>>>>> 99af65d (fix: readme withou template)
 
 ![Vertical Demo](https://raw.githubusercontent.com/stormizinhu/megaman-x-lifebar-custom-widget-stream-elements/refs/heads/main/src/img/vertical.gif) 
 
@@ -146,9 +142,4 @@ git clone git@github.com:stormizinhu/megaman-x-custom-alerts-widget-stream-eleme
 This project is licensed under the MIT License. 
 
 ---
-
-<<<<<<< HEAD
 ### © stormizinhu - 2025
-=======
-### © stormizinhu - 2025
->>>>>>> 99af65d (fix: readme withou template)
