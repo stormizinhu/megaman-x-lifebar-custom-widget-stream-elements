@@ -3,7 +3,7 @@ name: Auto Generate README
 on:
   push:
     paths:
-      - README.template.md
+      - README.md
       - .github/workflows/auto-readme.yml
   workflow_dispatch:
 
@@ -19,12 +19,12 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Generate README.md from Template
+      - name: Generate README.md
         run: |
-          echo "Substituindo variáveis no README.template.md..."
+          echo "Substituindo variáveis no README.md..."
 
-          # Substitui variáveis básicas do template
-          envsubst < README.template.md > temp_readme.md
+          # Substitui variáveis básicas do README.md
+          envsubst < README.md > temp_readme.md
 
           # Define badges formatadas
           BADGES=$(cat <<EOF
@@ -40,7 +40,7 @@ jobs:
           EOF
           )
 
-          # Substitui o marcador de badges no template
+          # Substitui o marcador de badges no README.md
           awk -v badges="$BADGES" '
             /<!-- BADGES_ARE_INSERTED_HERE -->/ {
               print badges
